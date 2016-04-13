@@ -1,0 +1,11 @@
+body {
+    background-color: white;
+    min-height: 2000px;
+    padding-top: 70px;
+}
+
+.navbar-brand img {
+    float: left;
+    margin-top: -10px;
+    margin-right: 5px;
+}

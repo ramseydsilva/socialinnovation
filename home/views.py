@@ -10,3 +10,9 @@ class HomeView(TemplateView):
         context['greeting'] = "Welcome!"
         context['questions'] = Question.objects.all()
         return context
+
+class ContactView(TemplateView):
+    template_name = "home/contact.html"
+
+class AboutView(TemplateView):
+    template_name ="home/about.html"

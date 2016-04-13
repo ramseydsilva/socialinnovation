@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h2>Please answer the following survey</h2>
+    <hr/>
     {% for object in questions %}
         {% include "includes/question.html" %}
+        <hr/>
     {% endfor %}
-    <button name="button" value="OK" type="button">submit</button>
+    <button type="button" class="btn btn-success">Submit</button>
 {% endblock %}
