@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Surveyor</title>
+        <style>
+            body { background-color: #B1B1B1; }
+        </style>
+    </head>
+    <body>
+        <h1><a href="{% url 'home:index' %}">Welcome to Surveyor</a></h1>
+        <hr/>
+        <h2>Please answer the following survey</h2>
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>
