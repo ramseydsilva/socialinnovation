@@ -16,3 +16,7 @@ class ContactView(TemplateView):
 
 class AboutView(TemplateView):
     template_name ="home/about.html"
+
+class LoginView(TemplateView):
+    template_name="home/login.html"
+
