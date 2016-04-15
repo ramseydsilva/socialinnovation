@@ -1,5 +1,5 @@
 from django.conf.urls import include, url, patterns
-from home.views import HomeView, ContactView, AboutView ,RegisterView
+from home.views import HomeView, ContactView, AboutView, RegisterView, LoginView
 
 
 urlpatterns = [
@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^register/$',RegisterView.as_view(),name='register'),
-    
+    url(r'login/$' , LoginView.as_view(),name='login')
 ]
