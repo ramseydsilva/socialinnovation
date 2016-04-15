@@ -21,9 +21,13 @@
         <li><a href="{% url "home:about" %}">About</a></li>
         <li><a href="{% url "home:contact" %}">Contact</a></li>
     </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url "home:login"%}">Login</a></li>
-        <li><a href="{% url "home:register" %}">Register</a></li>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_anonymous %}
+                <li><a href="{% url "home:login"%}">Login</a></li>
+                <li><a href="{% url "home:register" %}">Register</a></li>
+            {% else %}
+                <li><a href="{% url "home:logout" %}">Logout</a></li>
+            {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
   </div>

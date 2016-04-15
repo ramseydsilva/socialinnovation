@@ -1,4 +1,5 @@
 from django.conf.urls import include, url, patterns
+from django.contrib.auth.views import logout
 from home.views import HomeView, ContactView, AboutView, RegisterView, LoginView
 
 
@@ -7,5 +8,6 @@ urlpatterns = [
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^register/$',RegisterView.as_view(),name='register'),
-    url(r'login/$' , LoginView.as_view(),name='login')
+    url(r'login/$' , LoginView.as_view(),name='login'),
+    url(r'^logout/$', logout, {'next_page': '/'}, name="logout")
 ]
