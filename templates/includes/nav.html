@@ -20,10 +20,10 @@
         <li class="active"><a href="{% url "home:index" %}">Home</a></li>
         <li><a href="{% url "home:about" %}">About</a></li>
         <li><a href="{% url "home:contact" %}">Contact</a></li>
-      </ul>
+    </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">Login</a></li>
-        <li><a href="../navbar-static-top/">Register</a></li>
+        <li><a href="{% url "home:register" %}">Register</a></li>
         
       </ul>
     </div><!--/.nav-collapse -->
