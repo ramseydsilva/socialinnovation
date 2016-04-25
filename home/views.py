@@ -19,6 +19,3 @@ class AboutView(TemplateView):
 
 class RegisterView(TemplateView):
     template_name ="home/register.html"
-
-class LoginView(TemplateView):
-    template_name="home/login.html"
