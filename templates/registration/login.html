@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block pre_content %}
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert"><strong>Error:</strong> Your username and password didn't match. Please try again.</div>
+    {% endif %}
+{% endblock %}
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+{% block content %}
 
 <form class="form-horizontal" method="post" action="{% url 'home:login' %}">
 {% csrf_token %}
