@@ -3,6 +3,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^questions/', include('questions.urls', namespace="questions")),
+    url(r'^survey/', include('questions.urls', namespace="questions")),
     url(r'', include('home.urls', namespace="home")),
 ]

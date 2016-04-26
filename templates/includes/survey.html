@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-8">
+        <p><a href="{{ object.get_absolute_url }}">{{ object }}</a></p>
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-success" href="{{ object.get_absolute_url }}">Take the survey</a>
+        <a class="btn btn-danger" href="{{ object.get_absolute_url }}/results/">View Results</a>
+    </div>
+</div>

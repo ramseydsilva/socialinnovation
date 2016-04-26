@@ -1,8 +1,7 @@
 <p><a href="{{ object.get_absolute_url }}">{{ object.question }}</a></p>
-<form>
-    {% for option in object.options.all %}
-    <input type="radio" name="{{ question.id }}" value="{{ option.id }}" {% if forloop.first %}checked{% endif %}>
-        {{ option.option }}
-    <br>
-    {% endfor %}
-</form>
+{% for option in object.options.all %}
+<label><input type="radio" name="{{ object.id }}" value="{{ option.id }}" {% if forloop.first %}checked{% endif %}>
+    {{ option.option }}
+</label>
+<br>
+{% endfor %}

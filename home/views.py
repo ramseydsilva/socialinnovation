@@ -2,17 +2,17 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.views.generic import View, TemplateView
+from django.views.generic.list import ListView
 from django.shortcuts import render
-from questions.models import Question
+from questions.models import Question, Survey
 
-
-class HomeView(TemplateView):
+class HomeView(ListView):
+    model = Survey
     template_name = "home/index.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context['greeting'] = "Welcome!"
-        context['questions'] = Question.objects.all()
         return context
 
 class ContactView(TemplateView):
