@@ -13,19 +13,31 @@ class HomeView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context['greeting'] = "Welcome!"
+        context['home_page'] = True
         return context
 
 class ContactView(TemplateView):
     template_name = "home/contact.html"
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(ContactView, self).get_context_data(*args, **kwargs)
+        context['contact_page'] = True
+        return context
+
 class AboutView(TemplateView):
     template_name ="home/about.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AboutView, self).get_context_data(*args, **kwargs)
+        context['about_page'] = True
+        return context
 
 class RegisterView(View):
     template_name ="registration/register.html"
 
     def get(self, request, *args, **kwargs):
         context = {}
+        context['register_page'] = True
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):

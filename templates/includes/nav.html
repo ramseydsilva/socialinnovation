@@ -17,16 +17,16 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url "home:index" %}">Home</a></li>
-        <li><a href="{% url "home:about" %}">About</a></li>
-        <li><a href="{% url "home:contact" %}">Contact</a></li>
+          <li {% if home_page %}class="active"{% endif %}><a href="{% url "home:index" %}">Home</a></li>
+          <li {% if about_page %}class="active"{% endif %}><a href="{% url "home:about" %}">About</a></li>
+          <li {% if contact_page %}class="active"{% endif %}><a href="{% url "home:contact" %}">Contact</a></li>
     </ul>
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_anonymous %}
-                <li><a href="{% url "home:login"%}">Login</a></li>
-                <li><a href="{% url "home:register" %}">Register</a></li>
+            <li {% if login_page %}class="active"{% endif %}><a href="{% url "home:login"%}">Login</a></li>
+            <li {% if register_page %}class="active"{% endif %}><a href="{% url "home:register" %}">Register</a></li>
             {% else %}
-                <li><a href="{% url "home:logout" %}?next=/">Logout</a></li>
+            <li {% if logout_page %}class="active"{% endif %}><a href="{% url "home:logout" %}?next=/">Logout</a></li>
             {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
