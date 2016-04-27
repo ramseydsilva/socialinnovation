@@ -1,5 +1,5 @@
 from django.contrib import admin
-from questions.models import Question, Answer, Option, Survey
+from questions.models import Question, Answer, Option, Survey, Contact
 
 class OptionAdmin(admin.ModelAdmin):
     list_display = ('option', 'question')
@@ -17,3 +17,4 @@ admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Option,OptionAdmin)
 admin.site.register(Survey)
+admin.site.register(Contact)

@@ -39,6 +39,12 @@ class Survey(models.Model):
 
     def __unicode__(self):
         return self.title
-     
+
     def get_absolute_url(self):
         return "/survey/%d" %(self.id)
+
+class Contact(models.Model):
+      email=models.CharField(max_length=500)
+      name=models.CharField(max_length=200)
+      message=models.TextField()
+
