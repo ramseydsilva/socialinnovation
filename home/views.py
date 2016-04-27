@@ -14,13 +14,15 @@ class HomeView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context['greeting'] = "Welcome!"
+        context['home_page'] = True
         return context
 
-class ContactView(TemplateView):
+class ContactView(View):
     template_name = "home/contact.html"
 
     def get(self, request, *args, **kwargs):
         context = {}
+        context['contact_page'] = True
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
@@ -29,8 +31,6 @@ class ContactView(TemplateView):
         name = self.request.POST.get("name", "")
         email = self.request.POST.get("email", "")
         message = self.request.POST.get("message", "")
-
-        print name, email, message
 
         if not name:
             error = "You need to enter a name"
@@ -56,11 +56,17 @@ class ContactView(TemplateView):
 class AboutView(TemplateView):
     template_name ="home/about.html"
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(AboutView, self).get_context_data(*args, **kwargs)
+        context['about_page'] = True
+        return context
+
 class RegisterView(View):
     template_name ="registration/register.html"
 
     def get(self, request, *args, **kwargs):
         context = {}
+        context['register_page'] = True
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
