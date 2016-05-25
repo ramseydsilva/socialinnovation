@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
 class Question(models.Model):
     question = models.CharField(max_length=500)
     survey = models.ForeignKey('Survey', related_name="questions")

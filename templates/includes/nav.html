@@ -11,24 +11,61 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{% url "home:index" %}">
-          <img src="{% static "home/images/logo.jpg" %}" width="50px">
-          <div class="pull-left">Surveychamp</div>
+          <img src="{% static "home/images/csi-logo.png" %}" width="200px">
       </a>
     </div>
+<div class="social-media-container">
+            <a target="_blank" href="http://www.twitter.com/csisl" class="icon twitter" title="Twitter">Twitter</a>
+            <a target="_blank" href="http://www.facebook.com/centreforsocialinnovation" class="icon facebook"title="Facebook">Facebook</a>
+            <a target="_blank" href="http://vimeo.com/user10602853" class="icon vimeo"title="Vimeo">Vimeo</a>
+
+            <div class="email-signup">
+                <!-- Begin MailChimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="http://socialinnovation.us4.list-manage2.com/subscribe/post?u=5efc607b598b0bda548a30225&amp;id=1f15c8fc97" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate="">
+                        <input id="newsletter-email-field" type="email" value="" name="EMAIL" class="span3" placeholder="Enter email to subscribe" onclick="if (this.defaultValue==this.value) this.value=''" required="">
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_5efc607b598b0bda548a30225_1f15c8fc97" tabindex="-1" value="">
+                        </div>
+                        <input type="submit" value="Submit" name="saveForm" id="saveForm" class="btn">
+                    </form>
+                </div>
+                <!--End mc_embed_signup-->
+            </div>
+        </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-          <li {% if home_page %}class="active"{% endif %}><a href="{% url "home:index" %}">Home</a></li>
-          <li {% if about_page %}class="active"{% endif %}><a href="{% url "home:about" %}">About</a></li>
-          <li {% if contact_page %}class="active"{% endif %}><a href="{% url "home:contact" %}">Contact</a></li>
-    </ul>
+        <ul class="nav navbar-nav">
+          <li id="home" {% if home_page %}class="active"{% endif %}><a href="{% url "home:index" %}">Home</a></li>
+          <li id="about" {% if about_page %}class="active"{% endif %}><a href="{% url "home:about" %}">About</a></li>
+          <li id="coworking"><a href="{% url "home:about" %}">Coworking</a></li>
+          <li id="meeting"><a href="{% url "home:about" %}">Meeting Spaces</a></li>
+          <li id="events"><a href="{% url "home:about" %}">Events</a></li>
+          <li id="community"><a href="{% url "home:about" %}">Community</a></li>
+          <li id="contact"{% if contact_page %}class="active"{% endif %}><a href="{% url "home:contact" %}">Contact</a></li>
+        </ul>
+      
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_anonymous %}
             <li {% if login_page %}class="active"{% endif %}><a href="{% url "home:login"%}">Login</a></li>
-            <li {% if register_page %}class="active"{% endif %}><a href="{% url "home:register" %}">Register</a></li>
+            <li {% if register_page %}class="active"{% endif %}><a href="{% url "home:register" %}">Join</a></li>
             {% else %}
             <li {% if logout_page %}class="active"{% endif %}><a href="{% url "home:logout" %}?next=/">Logout</a></li>
             {% endif %}
-      </ul>
+        </ul>
+
+        <div class="sub-menu">
+
+            <div class="sm" id="home-sm">Home home home</div>
+            <div class="sm hidden" id="about-sm">About</div>
+            <div class="sm hidden" id="coworking-sm">Coworking sub menu</div>
+            <div class="sm hidden" id="meeting-sm">Meeting menu</div>
+            <div class="sm hidden" id="events-sm">event sub menu</div>
+            <div class="sm hidden" id="community-sm">community sub menu</div>
+            <div class="sm hidden" id="contact-sm">contact sub menu</div>
+
+        </div>
+
     </div><!--/.nav-collapse -->
   </div>
 </nav>

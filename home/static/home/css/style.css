@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "font1";
+    src: url("../fonts/font1");
+}
+
+@font-face {
+    font-family: "font2";
+    src: url("../fonts/font2");
+}
+
+@font-face {
+    font-family: "font3";
+    src: url("../fonts/font3");
+}
+
 body {
     background-color: white;
     min-height: 2000px;
@@ -17,3 +32,76 @@ body {
     height: 500px;
     padding-top: 20px;
 }
+
+.navbar-brand {
+    height: auto;
+}
+
+ul.nav li a {
+    font-family: "font3", sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: #0090D0 !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+}
+
+ul.nav li {
+    padding: 15px;
+}
+
+ul.nav {
+    height: 45px;
+}
+
+ul.nav li a:hover {
+    border-color: transparent;
+    padding-bottom: 2px;
+    border-width: 0 0 4px 0;
+    border-style: solid;
+    border-bottom-color: #0090D0;
+    background-color: transparent;
+}
+
+.main-container {
+    margin-top: 95px;
+}
+
+.sub-menu {
+    clear:right;
+
+}
+.social-media-container .icon.vimeo {
+    background-position: 0 -72px;
+}
+.social-media-container .icon.twitter {
+    background-position: 0 0;
+}
+.social-media-container .icon.facebook {
+    background-position: 0 -24px;
+}
+.social-media-container .icon {
+    background-image: url(../images/sm-icons-24.png);
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    height: 24px;
+    margin-right: 8px;
+    margin-top: 3px;
+    overflow: hidden;
+    width: 24px;
+    text-indent:-10000px;
+}
+
+
+.social-media-container {
+   float:right;
+   width:auto;
+}
+
+.email-signup {
+  float:right;
+  }
+
